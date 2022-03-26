@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  reverse-proxy:
+    image: traefik:v2.6
+    command: --api.insecure=true --providers.docker
+    ports:
+      - "8080:8080"
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - traefik.enable=false
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+    restart: always
+    labels:
+      - "traefik.http.routers.frontend.rule=Host(`todo.test.localhost`)"
+
+    volumes:
+      - .:/app/
+      - /app/node_modules
+    ports:
+      - "3000"
+    depends_on:
+      - reverse-proxy

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import Input from './Input'
 import TodoItem from './TodoItem'
 import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
