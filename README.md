@@ -1,12 +1,11 @@
 # **Todo**
 This is a todo-app that returns a task with a timer
 
-Built With
-JavaScript
-Css
-React
-Live Demo
-Live Demo Link
+- Built With
+- JavaScript
+- Css
+- React
+- [live demo](todo-bidiff.netlify.app)
 
 # **Authors**
 👤 Sabi Mantock
@@ -34,6 +33,7 @@ Services are built once and then tagged, by default as project_service.
 
 ### `docker-compose up`
 Builds, (re)creates, starts, and attaches to containers for a service.
+Open http://todo.test.localhost to view it in your browser.
 
 See the section about deployment for more information.
 
