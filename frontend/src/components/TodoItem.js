@@ -1,10 +1,18 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+
 import Countdown from 'react-countdown'
+import { Button } from '@mui/material'
 
 import Modal from './Modal'
 import { useDispatch } from 'react-redux'
 import { setCompeleted } from '../reducers/todo'
+import {
+  Container,
+  Timer,
+  Todo,
+  TodoWrapper,
+  Wrapper
+} from '../styles/todoItem'
 
 const TodoItem = ({ todo, timer, id, handleToggle, checked }) => {
   const [open, setOpen] = useState(false)
@@ -31,49 +39,11 @@ const TodoItem = ({ todo, timer, id, handleToggle, checked }) => {
           onPause={checkedTodo}
         />
       </Timer>
-      <button onClick={() => setOpen(!open)}>Delete</button>
+      <Button fullWidth size='small' onClick={() => setOpen(!open)}>
+        Delete
+      </Button>
     </Container>
   )
 }
 
-export const Container = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  button {
-    padding: 1.2rem;
-    font-size: 1rem;
-    border: none;
-    width: 20%;
-    background: white;
-    color: #ff6f47;
-    background: #f7fffe;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-`
-
-export const Wrapper = styled.div``
-
-export const TodoWrapper = styled.ul`
-  margin: 0.5rem;
-  /* background: white; */
-  font-size: 1.5rem;
-  color: black;
-  display: flex;
-  /* justify-content: space-between; */
-  align-items: center;
-  width: 100%;
-
-  transition: all 1s ease;
-`
-export const Todo = styled.div`
-  text-decoration: ${({ checked }) => (checked ? 'line-through' : '')};
-  cursor: pointer;
-`
-
-export const Timer = styled.div`
-  margin: 0;
-  align-self: center;
-`
 export default TodoItem

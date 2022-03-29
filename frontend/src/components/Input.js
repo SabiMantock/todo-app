@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-import styled from 'styled-components'
 import { addTask } from '../reducers/todo'
 import TextField from '@mui/material/TextField'
 import moment from 'moment'
+import { Form, FormGroup } from '../styles/input'
+import { Button } from '@mui/material'
 
 const Input = () => {
   const [state, setState] = useState('')
@@ -52,39 +53,12 @@ const Input = () => {
           fullWidth
         />
 
-        <button onClick={submit}>Add Task</button>
+        <Button fullWidth size='small' onClick={submit}>
+          Add Task
+        </Button>
       </FormGroup>
     </Form>
   )
 }
-
-export const Form = styled.form`
-  padding: 10px;
-  background-color: antiquewhite;
-  min-height: 10vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 50px auto 0 auto;
-  width: 50%;
-`
-export const FormGroup = styled.div`
-  display: flex;
-  gap: 1rem;
-  width: 100%;
-  justify-content: space-evenly;
-  align-items: center;
-  button {
-    padding: 1.2rem;
-    font-size: 1rem;
-    border: none;
-    width: 50%;
-    background: white;
-    color: #ff6f47;
-    background: #f7fffe;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-`
 
 export default Input
