@@ -5,7 +5,7 @@ This is a todo-app that returns a task with a timer
 - JavaScript
 - Css
 - React
-- [live demo](todo-bidiff.netlify.app)
+- [live demo](https://todo-bidiff.netlify.app)
 
 # **Authors**
 👤 Sabi Mantock
